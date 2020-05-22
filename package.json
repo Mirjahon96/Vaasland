@@ -1,0 +1,19 @@
+{
+  "name": "vaasland",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mirjahon96/Vaasland.git"
+  },
+  "author": "M96",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mirjahon96/Vaasland/issues"
+  },
+  "homepage": "https://github.com/Mirjahon96/Vaasland#readme"
+}
