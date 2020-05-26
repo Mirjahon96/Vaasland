@@ -42,79 +42,71 @@
         </v-list>
       </v-navigation-drawer>
 
+      <!-- Navbar -->
+      <!-- <v-app-bar height="80" app fixed flat>
+        <v-container pa-0>
+          <v-row align="center">
+            <a href="#!">
+              <img src="img/logo.png" class="responsive-img" />
+            </a>
+
+            <v-spacer></v-spacer>
+
+            <div v-if="$vuetify.breakpoint.mdAndUp">
+              <v-hover
+                v-slot:default="{ hover }"
+                v-for="(link, index) in links"
+                :key="index"
+              >
+                <v-btn :href="link.href" text :color='hover ? "error" : ""'
+                  >{{ link.name }}</v-btn
+                >
+              </v-hover>
+            </div>
+            <v-app-bar-nav-icon
+              @click="drawer = !drawer"
+              class="hidden-md-and-up"
+            ></v-app-bar-nav-icon>
+          </v-row>
+        </v-container>
+      </v-app-bar> -->
+
+      <nav class="navbar white">
+        <v-container pa-0>
+          <v-toolbar fixed flat height="90">
+            <a href="#!" class="responsive-img">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+
+            <v-spacer></v-spacer>
+
+            <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
+              <v-btn v-for="(link, index) in links"
+              :key="index" text :href="link.href">{{ link.name }}</v-btn>
+              <div class="d-flex align-center ml-4">
+                <v-hover v-slot:default="{ hover }">
+                  <v-btn color="error" depressed large :elevation="hover ? '5' : '0' ">Client Zone</v-btn co>
+                </v-hover>
+              </div>
+            </v-toolbar-items>
+            <v-app-bar-nav-icon
+              @click="drawer = !drawer"
+              class="hidden-md-and-up"
+            ></v-app-bar-nav-icon>
+          </v-toolbar>
+        </v-container>
+      </nav>
+
       <v-content>
         <!-- Section: Showcase -->
         <section id="showcase" class="white--text">
-          <!-- Navbar -->
-          <v-app-bar
-            app
-            dark
-            elevate-on-scroll
-            scroll-target="#scrolling"
-            class="transparent"
-          >
-            <v-container>
-              <v-row align="center">
-                <v-toolbar-title
-                  class="display-1"
-                  :class="{'headline': $vuetify.breakpoint.smAndDown}"
-                  >Vaasland
-                </v-toolbar-title>
-
-                <v-spacer></v-spacer>
-
-                <div class="hidden-sm-and-down">
-                  <v-btn text>
-                    some action
-                  </v-btn>
-                  <v-menu open-on-hover bottom transition="slide-y-transition">
-                    <template v-slot:activator="{ on }">
-                      <v-btn text v-on="on">
-                        All Blocks
-                      </v-btn>
-                    </template>
-                    <v-list>
-                      <v-list-item-group>
-                        <v-list-item @click="() => {}">
-                          <v-list-item-content>
-                            <v-list-item-title>
-                              The winner
-                            </v-list-item-title>
-                          </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item @click="() => {}">
-                          <v-list-item-content>
-                            <v-list-item-title>
-                              The winner
-                            </v-list-item-title>
-                          </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item @click="() => {}">
-                          <v-list-item-content>
-                            <v-list-item-title>
-                              The winner
-                            </v-list-item-title>
-                          </v-list-item-content>
-                        </v-list-item>
-                      </v-list-item-group>
-                    </v-list>
-                  </v-menu>
-                </div>
-                <v-app-bar-nav-icon
-                  @click="drawer = !drawer"
-                  class="hidden-md-and-up"
-                ></v-app-bar-nav-icon>
-              </v-row>
-            </v-container>
-          </v-app-bar>
-
-          <v-container>
+          <v-container py-0>
             <v-row align="center">
               <v-col cols="12" sm="12" md="6">
-                <h1 class="display-2 font-weight-bold mb-4">
-                  Web Hosting / VPN Digital Technology Modern Solution !
+                <h1 class="display-2 font-weight-black mb-4">
+                  Web Hosting / VPN<br />Digital Technology Modern Solution !
                 </h1>
-                <p class="title font-weight-light mb-8">
+                <p class="title font-weight-regular mb-8">
                   Get stuffed mate cheeky bugger lurgy loo plastered ruddy
                   bubble and squeak bevvy skive off quaint wellies.
                 </p>
@@ -134,7 +126,51 @@
           </v-container>
         </section>
 
-        <section class="mt-12 pt-12" id="scrolling"></section>
+        <!-- Section: Services -->
+        <section id="services" class="py-12 mt-12">
+          <v-container>
+            <div class="text-center mb-4">
+              <h2 class="display-1 font-weight-medium">Looking for domain name?</h2>
+            </div>
+            <v-row>
+              <v-col cols="12" sm="12">
+                <v-alert border="left" colored-border color="error" elevation="2">
+                  <v-row no-gutters align="center">
+                    <v-col cols="12" sm="6" md="7">
+                      <v-text-field solo flat hide-details placeholder="Enter your domain name" class="title font-weight-regular"></v-text-field>
+                    </v-col>
+      
+                      <v-divider class="mr-3" inset vertical></v-divider>
+           
+                    
+                    <v-col cols="12" sm="2" md="2">
+                      <v-select
+                      v-model="servicesSelect"
+                      :items="names"
+                      menu-props="auto"
+                      hide-details
+                      single-line
+                      solo
+                      flat
+                      item-color="blue-grey darken-3"
+                      color="error"
+                      class="title font-weight-regular"
+                     ></v-select>
+                    </v-col>
+                    <v-col cols="12" sm="2" md="2" class="ml-4">
+                      <v-btn color="error lighten-1" elevation="6" x-large height="80" width="210">
+                        <v-icon left>mdi-magnify</v-icon>
+                        Search
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+                </v-alert>
+              </v-col>
+            </v-row>
+          </v-container>
+
+        </section>
+
       </v-content>
     </v-app>
 

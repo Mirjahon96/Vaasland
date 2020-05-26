@@ -4,7 +4,32 @@
   margin: 0;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
+/* Utilities */
+.responsive-img {
+  max-width: 100%;
+  width: 100%;
+}
+
 /* Showcase */
 #showcase {
   background: #020230;
+}
+
+#showcase h1 {
+  line-height: 1.5;
+}
+
+/* Navbar */
+.navbar {
+  z-index: 1;
+  width: 100%;
+}
+
+/* Services */
+#services {
+  /* background: url("/img/world-map.png") no-repeat center center/ cover; */
 }
