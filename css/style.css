@@ -25,11 +25,7 @@ body {
 
 /* Navbar */
 .navbar {
+  position: fixed;
   z-index: 1;
   width: 100%;
-}
-
-/* Services */
-#services {
-  /* background: url("/img/world-map.png") no-repeat center center/ cover; */
 }

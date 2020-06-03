@@ -134,7 +134,7 @@
             </div>
             <v-row>
               <v-col cols="12" sm="12">
-                <v-alert border="left" colored-border color="error" elevation="2">
+                <v-alert border="left" colored-border color="error" elevation="24">
                   <v-row no-gutters align="center">
                     <v-col cols="12" sm="6" md="7">
                       <v-text-field solo flat hide-details placeholder="Enter your domain name" class="title font-weight-regular"></v-text-field>
@@ -165,6 +165,12 @@
                     </v-col>
                   </v-row>
                 </v-alert>
+              </v-col>
+            </v-row>
+            <v-row align="center" justify="center" class="text-center grey--text text--darken-1">
+              <v-col cols="2" sm="2" class="d-sm-flex d-xs-block align-center justify-space-around px-lg-10 px-0" v-for="(domen, i) in domens" :key="i">
+                <h3>{{ domen.name }}</h3>
+                <p class="ma-0">{{ domen.cost }}</p>
               </v-col>
             </v-row>
           </v-container>

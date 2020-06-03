@@ -14,7 +14,15 @@ new Vue({
       ],
       // Services
       servicesSelect: ".com",
-      names: [".com", ".net", ".org", ".uz", ".uk"]
+      names: [".com", ".net", ".org", ".uz", ".uk"],
+
+      domens: [
+        { name: ".com", cost: "$6.50" },
+        { name: ".net", cost: "$10" },
+        { name: ".co", cost: "$12" },
+        { name: ".info", cost: "$7.5" },
+        { name: ".org", cost: "$11" }
+      ]
     };
   },
   methods: {}
