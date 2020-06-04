@@ -22,6 +22,46 @@ new Vue({
         { name: ".co", cost: "$12" },
         { name: ".info", cost: "$7.5" },
         { name: ".org", cost: "$11" }
+      ],
+
+      // Features
+      featuresBox: [
+        {
+          img: "img/icon1.png",
+          title: "Shared Hosting",
+          text:
+            "Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse.!"
+        },
+        {
+          img: "img/icon2.png",
+          title: "Domain Sale",
+          text:
+            "Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse.!"
+        },
+        {
+          img: "img/icon3.png",
+          title: "Reduce Complexity",
+          text:
+            "Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse.!"
+        },
+        {
+          img: "img/icon4.png",
+          title: "Access Globally",
+          text:
+            "Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse.!"
+        },
+        {
+          img: "img/icon5.png",
+          title: "Move Faster",
+          text:
+            "Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse.!"
+        },
+        {
+          img: "img/icon6.png",
+          title: "Easily Integrate",
+          text:
+            "Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse.!"
+        }
       ]
     };
   },

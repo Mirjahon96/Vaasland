@@ -130,7 +130,7 @@
         <section id="services" class="py-12 mt-12">
           <v-container>
             <div class="text-center mb-4">
-              <h2 class="display-1 font-weight-medium">Looking for domain name?</h2>
+              <h2 class="display-1 font-weight-medium grey--text text--darken-3">Looking for domain name?</h2>
             </div>
             <v-row>
               <v-col cols="12" sm="12">
@@ -174,7 +174,45 @@
               </v-col>
             </v-row>
           </v-container>
+        </section>
 
+        <section id="features" class="py-12">
+          <v-container>
+            <div class="text-center">
+              <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
+                Designed for developers.
+                <br/>
+                Built for business.
+              </h2>
+              <p class="grey--text text--darken-1">The full monty burke posh excuse my French Richard cheeky bobby spiffing crikey
+                Why gormless, pear shaped.!</p>
+            </div>
+            <v-row>
+              <v-col cols="12" sm="6" md="4" v-for="(box, i) in featuresBox" :key="i">
+                <v-hover v-slot:default="{ hover }">
+                  <v-alert class="px-8 pt-8 mb-0" :border="hover ? 'top' : 'top' " colored-border :color="hover ? 'error' : 'transparent'" :elevation="hover ? '3' : '0'">
+                    <div class="py-8">
+                      <div class="mb-8">
+                        <img :src="box.img">
+                      </div>
+                    <v-hover v-slot:default="{hover}">
+                    <h4 class="headline mb-4" :class="hover  ? 'error--text' : 'grey--text text--darken-4'">
+                      {{ box.title }}
+                    </h4>
+                  </v-hover>
+                  <p class="grey--text text--darken-1">{{ box.text }}</p>                       
+                  </div>
+                  </v-alert>
+                </v-hover>
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <section id="features-2" class="py-12">
+          <v-container>
+            <v-row></v-row>
+          </v-container>
         </section>
 
       </v-content>

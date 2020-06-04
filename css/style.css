@@ -29,3 +29,8 @@ body {
   z-index: 1;
   width: 100%;
 }
+
+/* Features */
+#features .v-alert {
+  cursor: pointer;
+}
