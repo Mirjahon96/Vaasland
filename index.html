@@ -29,7 +29,6 @@
               </v-list-item-icon>
               <v-list-item-title>Home</v-list-item-title>
             </v-list-item>
-
             <v-list-item>
               <v-list-item-icon>
                 <v-icon>
@@ -81,11 +80,19 @@
             <v-spacer></v-spacer>
 
             <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
-              <v-btn v-for="(link, index) in links"
-              :key="index" text :href="link.href">{{ link.name }}</v-btn>
+              <v-hover
+                v-slot:default="{ hover }"
+                v-for="(link, index) in links"
+                :key="index"
+              >
+                <v-btn :href="link.href" text :color='hover ? "error" : ""'
+                  >{{ link.name }}</v-btn
+                >
+              </v-hover>
+              
               <div class="d-flex align-center ml-4">
                 <v-hover v-slot:default="{ hover }">
-                  <v-btn color="error" depressed large :elevation="hover ? '5' : '0' ">Client Zone</v-btn co>
+                  <v-btn color="error" depressed large :elevation="hover ? '5' : '0'" class="text-capitalize">Client Zone</v-btn>
                 </v-hover>
               </div>
             </v-toolbar-items>
@@ -102,9 +109,9 @@
         <section id="showcase" class="white--text">
           <v-container py-0>
             <v-row align="center">
-              <v-col cols="12" sm="12" md="6">
+              <v-col cols="12" sm="6" md="6">
                 <h1 class="display-2 font-weight-black mb-4">
-                  Web Hosting / VPN<br />Digital Technology Modern Solution !
+                  Web Hosting / VPN <br class="d-none d-md-block"/>Digital Technology Modern Solution!
                 </h1>
                 <p class="title font-weight-regular mb-8">
                   Get stuffed mate cheeky bugger lurgy loo plastered ruddy
@@ -119,7 +126,7 @@
                   >Get Started</v-btn
                 >
               </v-col>
-              <v-col cols="12" sm="12" md="6">
+              <v-col cols="12" sm="6" md="6">
                 <v-img src="img/hosting-image.png"></v-img>
               </v-col>
             </v-row>
@@ -142,7 +149,6 @@
       
                       <v-divider class="mr-3" inset vertical></v-divider>
            
-                    
                     <v-col cols="12" sm="2" md="2">
                       <v-select
                       v-model="servicesSelect"
@@ -167,24 +173,25 @@
                 </v-alert>
               </v-col>
             </v-row>
-            <v-row align="center" justify="center" class="text-center grey--text text--darken-1">
+            <v-row align="center" justify="center" class="text-center grey--text text--darken-1 mt-4">
               <v-col cols="2" sm="2" class="d-sm-flex d-xs-block align-center justify-space-around px-lg-10 px-0" v-for="(domen, i) in domens" :key="i">
-                <h3>{{ domen.name }}</h3>
+                <h3 class="font-weight-medium">{{ domen.name }}</h3>
                 <p class="ma-0">{{ domen.cost }}</p>
               </v-col>
             </v-row>
           </v-container>
         </section>
 
+        <!-- Section: Features -->
         <section id="features" class="py-12">
           <v-container>
             <div class="text-center">
               <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
                 Designed for developers.
-                <br/>
+                <br class="d-none d-md-block"/>
                 Built for business.
               </h2>
-              <p class="grey--text text--darken-1">The full monty burke posh excuse my French Richard cheeky bobby spiffing crikey
+              <p class="grey--text text--darken-1">The full monty burke posh excuse my French Richard cheeky bobby spiffing crikey<br class="d-none d-md-block"/>
                 Why gormless, pear shaped.!</p>
             </div>
             <v-row>
@@ -192,7 +199,7 @@
                 <v-hover v-slot:default="{ hover }">
                   <v-alert class="px-8 pt-8 mb-0" :border="hover ? 'top' : 'top' " colored-border :color="hover ? 'error' : 'transparent'" :elevation="hover ? '3' : '0'">
                     <div class="py-8">
-                      <div class="mb-8">
+                      <div class="mb-6 ml-3">
                         <img :src="box.img">
                       </div>
                     <v-hover v-slot:default="{hover}">
@@ -209,11 +216,108 @@
           </v-container>
         </section>
 
-        <section id="features-2" class="py-12">
+        <section id="features-2" class="py-10">
           <v-container>
-            <v-row></v-row>
+            <v-row align="center">
+              <v-col cols="12" sm="12" md="6">
+                <img src="img/business1.png">
+              </v-col>
+              <v-col cols="12" sm="12" md="6">
+                <h2 class="display-2 font-weight-regular grey--text text--darken-3 mb-5">
+                  Solutions for Your small business
+                </h2>
+                <p class="grey--text text-darken-2 mb-6">Don't get shirty with me owt to do with me arse down the pub have it car boot happy days no biggie bevvy only a quid I, in my flat the little rotter cheeky.!</p>
+                <div class="mb-4">
+                    <img src="img/icon7.png" class="float-left mt-1 mr-5">
+                  <div class="overflow-hidden">
+                    <h4 class="title mb-2">
+                      High Speed Server
+                    </h4>
+                    <p class="blue-grey--text text--darken-1">Hunky dory barney fanny around up<br/>the duff no biggie.</p>
+                  </div>
+                </div>
+                <div>
+                    <img src="img/icon8.png" class="float-left mt-1 mr-5">
+                  <div class="overflow-hidden">
+                    <h4 class="title mb-2">
+                      Move Faster
+                    </h4>
+                    <p class="blue-grey--text text--darken-1">Hunky dory barney fanny around up<br/>the duff no biggie.</p>
+                  </div>
+                </div>
+              </v-col>
+            </v-row>
           </v-container>
         </section>
+
+        <section id="features-3" class="py-10">
+          <v-container>
+            <v-row align="center">
+              <v-col cols="12" sm="12" md="6">
+                <h2 class="display-2 font-weight-regular grey--text text--darken-3 mb-5">
+                  Quick and easy to <br/>get started
+                </h2>
+                <p class="grey--text text-darken-2 mb-6">Don't get shirty with me owt to do with me arse down the pub have it car boot happy days no biggie bevvy only a quid I, in my flat the little rotter cheeky.!</p>
+                <div class="mb-4">
+                    <img src="img/icon9.png" class="float-left mt-1 mr-5">
+                  <div class="overflow-hidden">
+                    <h4 class="title mb-2">
+                      Reseller Hosting
+                    </h4>
+                    <p class="blue-grey--text text--darken-1">Hunky dory barney fanny around up<br/>the duff no biggie.</p>
+                  </div>
+                </div>
+                <div>
+                    <img src="img/icon10.png" class="float-left mt-1 mr-5">
+                  <div class="overflow-hidden">
+                    <h4 class="title mb-2">
+                      Wordpress Hosting
+                    </h4>
+                    <p class="blue-grey--text text--darken-1">Hunky dory barney fanny around up<br/>the duff no biggie.</p>
+                  </div>
+                </div>
+              </v-col>
+              <v-col cols="12" sm="12" md="6">
+                <img src="img/business2.png">
+              </v-col>
+            </v-row>
+          </v-container>
+        </section>
+
+        <!-- Section: CTA -->
+        <section id="cta" class="py-12">
+          <v-container>
+            <v-row align="center">
+              <v-col cols="12" md="6">
+                <img src="img/action_img.png">
+              </v-col>
+              <v-col cols="12" md="6">
+                <h2 class="display-2 white--text font-weight-medium mb-6">Managed wordpress Hosting on all plans</h2>
+                <p class="blue--text text--lighten-4 mb-10">Spiffing pukka show off show off pick your nose and blow off easy peasy buggered hotpot Harry, pardon me blatant.!</p>
+                <v-btn color="error" x-large class="text-capitalize">Product docs</v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+      </section>
+
+      <!-- Section: Pricing -->
+      <section id="pricing" class="py-12 mt-12">
+        <v-container>
+          <div class="text-center">
+            <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
+              Check out awesome plans,
+              <br class="d-none d-md-block" />
+              Built for business.
+            </h2>
+            <p class="grey--text text--darken-1">The full monty burke posh excuse my French Richard cheeky bobby spiffing crikey<br class="d-none d-md-block"/>
+              Why gormless, pear shaped.!</p>
+          </div>
+          <v-row>
+            <v-col cols="12"></v-col>
+          </v-row>
+        </v-container>
+      </section>
+        
 
       </v-content>
     </v-app>

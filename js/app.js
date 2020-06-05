@@ -6,7 +6,7 @@ new Vue({
       drawer: false,
       // App Bar
       links: [
-        { name: "Home", href: "#Vassland" },
+        { name: "Home", href: "#Vaasland" },
         { name: "About", href: "#about" },
         { name: "Services", href: "#services" },
         { name: "Projects", href: "#projects" },
