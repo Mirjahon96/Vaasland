@@ -44,6 +44,22 @@ h2 {
   cursor: pointer;
 }
 
+/* Call To Action */
 #cta {
   background: #020230;
+}
+
+/* Pricing */
+#pricing .v-data-table th {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#pricing .v-data-table td {
+  font-size: 16px;
+  color: #775577;
+}
+
+#pricing .v-data-table td:first-child {
+  font-weight: 500;
 }

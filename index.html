@@ -313,11 +313,61 @@
               Why gormless, pear shaped.!</p>
           </div>
           <v-row>
-            <v-col cols="12"></v-col>
+            <v-col cols="12" sm="10" class="mx-auto">
+              <v-card outlined class="pa-6">
+                <v-tabs
+                v-model="pricingTab"
+                background-color="transparent"
+                color="error"
+                grow
+              >
+                <v-tab>Standard</v-tab>
+                <v-tab>CPU Optimization</v-tab>
+                <v-tab>General Purpose</v-tab>
+              </v-tabs>
+  
+              <div class="my-12">
+                <p class="grey--text text--darken-1">Oxford William owt to do with me Why cuppa buggered, nancy boy get stuffed mate absolutely bladdered blag matie boy the full monty bobby bleeder.</p>
+              </div>
+          
+              <v-tabs-items v-model="pricingTab">
+                <v-tab-item v-for="i in 3" :key="i.name"
+                >
+                <v-data-table
+                :headers="priceHeaders"
+                :items="dataPrice"
+                hide-default-footer
+              >
+                <template v-slot:item.plan="{ item }">
+                  <v-btn color="error lighten-1" class="text-capitalize" small outlined>{{ item.plan }}</v-btn>
+                </template>
+              </v-data-table>
+                </v-tab-item>
+              </v-tabs-items>
+              </v-card>
+            </v-col>
           </v-row>
         </v-container>
       </section>
         
+      <!-- Section: Blog -->
+      <section id="blog" class="py-12">
+        <v-container>
+          <div class="text-center">
+            <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
+              Our Latest News
+            </h2>
+            <p class="grey--text text--darken-1">The full monty burke posh excuse my French Richard cheeky bobby spiffing crikey<br class="d-none d-md-block"/>
+              Why gormless, pear shaped.!</p>
+          </div>
+          <v-row>
+            <v-col cols="12" sm="6">
+              
+            </v-col>
+          </v-row>
+        </v-container>
+
+      </section>
 
       </v-content>
     </v-app>
