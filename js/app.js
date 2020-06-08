@@ -143,6 +143,22 @@ new Vue({
           price: `$25/mo $0.025/hr`,
           plan: "Choose Plan"
         }
+      ],
+
+      // Blogs
+      blogs: [
+        {
+          img: "img/h_blog1.jpg",
+          subtitle: "June 20, 2020",
+          title: "How To Deploy a PHP Application with Kubernetes on Ubuntu",
+          comments: "3"
+        },
+        {
+          img: "img/h_blog2.jpg",
+          subtitle: "June 25, 2020",
+          title: "How To Build a Node.js Application with Docker",
+          comments: "7"
+        }
       ]
     };
   },

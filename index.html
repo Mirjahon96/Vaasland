@@ -70,7 +70,7 @@
         </v-container>
       </v-app-bar> -->
 
-      <nav class="navbar white">
+      <nav class="navbar white elevation-1">
         <v-container pa-0>
           <v-toolbar fixed flat height="90">
             <a href="#!" class="responsive-img">
@@ -301,7 +301,7 @@
       </section>
 
       <!-- Section: Pricing -->
-      <section id="pricing" class="py-12 mt-12">
+      <section id="pricing" class="py-12 my-12">
         <v-container>
           <div class="text-center">
             <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
@@ -320,11 +320,15 @@
                 background-color="transparent"
                 color="error"
                 grow
+                show-arrows
               >
+              <v-tabs-slider></v-tabs-slider>
+
                 <v-tab>Standard</v-tab>
                 <v-tab>CPU Optimization</v-tab>
                 <v-tab>General Purpose</v-tab>
               </v-tabs>
+
   
               <div class="my-12">
                 <p class="grey--text text--darken-1">Oxford William owt to do with me Why cuppa buggered, nancy boy get stuffed mate absolutely bladdered blag matie boy the full monty bobby bleeder.</p>
@@ -353,7 +357,7 @@
       <!-- Section: Blog -->
       <section id="blog" class="py-12">
         <v-container>
-          <div class="text-center">
+          <div class="text-center mb-6">
             <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
               Our Latest News
             </h2>
@@ -361,8 +365,43 @@
               Why gormless, pear shaped.!</p>
           </div>
           <v-row>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" sm="6" v-for="blog in blogs" :key="blog.id"> 
+              <v-card outlined>
+                <v-img
+                :src="blog.img"
+              >
+              </v-img>
+              <div class="px-4">
+                <v-card-subtitle class="text-uppercase grey--text text--darken-2 pt-6 pb-0">
+                <v-icon color="error">mdi-clock-outline</v-icon>
+                {{ blog.subtitle }}
+              </v-card-subtitle>
+              <v-card-title>
+                <v-hover v-slot:default="{ hover }">
+                  <a href="#!" :class="hover ? 'error--text' : 'grey--text text--darken-3' " class="headline">
+                    {{ blog.title }}
+                  </a>
+              </v-hover>
+              </v-card-title>
               
+                <v-card-actions class=" pt-0">
+                  <v-hover v-slot:default="{ hover }">
+                    <v-btn text :color="hover ? 'error' : '' ">
+                      Read More
+                      <v-icon :color="hover ? 'error' : ''">
+                        mdi-trending-neutral
+                      </v-icon>
+                    </v-btn>
+                  </v-hover>
+                  <v-spacer></v-spacer>
+                  <v-btn text>
+                    <v-icon left color="error">mdi-chat-outline</v-icon>
+                    {{ blog.comments }}
+                  </v-btn>
+                </v-card-actions>
+              </div>
+              
+              </v-card>
             </v-col>
           </v-row>
         </v-container>
