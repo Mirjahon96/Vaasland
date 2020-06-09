@@ -67,3 +67,12 @@ a {
 #pricing .v-data-table td:first-child {
   font-weight: 500;
 }
+
+/* CTA 2 */
+#cta-2 {
+  position: relative;
+}
+
+#cta-2 .v-overlay__content {
+  width: 100%;
+}
