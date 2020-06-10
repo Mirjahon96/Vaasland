@@ -7,10 +7,10 @@ new Vue({
       // App Bar
       links: [
         { name: "Home", href: "#Vaasland" },
-        { name: "About", href: "#about" },
-        { name: "Services", href: "#services" },
-        { name: "Projects", href: "#projects" },
-        { name: "Contact", href: "#contact" }
+        { name: "About", href: "#services" },
+        { name: "Services", href: "#features" },
+        { name: "Products", href: "#cta" },
+        { name: "Price", href: "#pricing" }
       ],
       // Services
       servicesSelect: ".com",
@@ -159,6 +159,14 @@ new Vue({
           title: "How To Build a Node.js Application with Docker",
           comments: "7"
         }
+      ],
+
+      // Footer
+      socialBtn: [
+        { icon: "mdi-facebook" },
+        { icon: "mdi-twitter" },
+        { icon: "mdi-vimeo" },
+        { icon: "mdi-pinterest" }
       ]
     };
   },

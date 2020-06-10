@@ -21,54 +21,14 @@
     <v-app v-cloak id="Vaasland">
       <!-- Sidebar -->
       <v-navigation-drawer app v-model="drawer" temporary>
-        <v-list nav>
-          <v-list-item-group active-class="deep-purple--text text--accent-4">
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Home</v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-heart
-                </v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>About</v-list-item-title>
+        <v-list>
+          <v-list-item-group active-class="red--text text--lighten-1">
+            <v-list-item v-for="(link, i) in links" :key="i" :href="link.href">
+              <v-list-item-title>{{ link.name }}</v-list-item-title>
             </v-list-item>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
-
-      <!-- Navbar -->
-      <!-- <v-app-bar height="80" app fixed flat>
-        <v-container pa-0>
-          <v-row align="center">
-            <a href="#!">
-              <img src="img/logo.png" class="responsive-img" />
-            </a>
-
-            <v-spacer></v-spacer>
-
-            <div v-if="$vuetify.breakpoint.mdAndUp">
-              <v-hover
-                v-slot:default="{ hover }"
-                v-for="(link, index) in links"
-                :key="index"
-              >
-                <v-btn :href="link.href" text :color='hover ? "error" : ""'
-                  >{{ link.name }}</v-btn
-                >
-              </v-hover>
-            </div>
-            <v-app-bar-nav-icon
-              @click="drawer = !drawer"
-              class="hidden-md-and-up"
-            ></v-app-bar-nav-icon>
-          </v-row>
-        </v-container>
-      </v-app-bar> -->
 
       <nav class="navbar white elevation-1">
         <v-container pa-0>
@@ -89,7 +49,6 @@
                   >{{ link.name }}</v-btn
                 >
               </v-hover>
-              
               <div class="d-flex align-center ml-4">
                 <v-hover v-slot:default="{ hover }">
                   <v-btn color="error" depressed large :elevation="hover ? '5' : '0'" class="text-capitalize">Client Zone</v-btn>
@@ -106,11 +65,11 @@
 
       <v-content>
         <!-- Section: Showcase -->
-        <section id="showcase" class="white--text">
+        <section id="showcase" class="white--text" :class="{'pt-12 mt-12' : $vuetify.breakpoint.smAndDown}">
           <v-container py-0>
             <v-row align="center">
-              <v-col cols="12" sm="6" md="6">
-                <h1 class="display-2 font-weight-black mb-4">
+              <v-col cols="12" sm="12" md="6" class="text-sm-center text-md-left">
+                <h1 class="display-2 font-weight-black mb-4" :class="{'display-1': $vuetify.breakpoint.smAndDown}">
                   Web Hosting / VPN <br class="d-none d-md-block"/>Digital Technology Modern Solution!
                 </h1>
                 <p class="title font-weight-regular mb-8">
@@ -126,7 +85,7 @@
                   >Get Started</v-btn
                 >
               </v-col>
-              <v-col cols="12" sm="6" md="6">
+              <v-col cols="12" sm="12" md="6">
                 <v-img src="img/hosting-image.png"></v-img>
               </v-col>
             </v-row>
@@ -186,7 +145,7 @@
         <section id="features" class="py-12">
           <v-container>
             <div class="text-center">
-              <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
+              <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6" :class="{'display-1': $vuetify.breakpoint.smAndDown}">
                 Designed for developers.
                 <br class="d-none d-md-block"/>
                 Built for business.
@@ -223,7 +182,7 @@
                 <img src="img/business1.png">
               </v-col>
               <v-col cols="12" sm="12" md="6">
-                <h2 class="display-2 font-weight-regular grey--text text--darken-3 mb-5">
+                <h2 class="display-2 font-weight-regular grey--text text--darken-3 mb-5" :class="{'display-1': $vuetify.breakpoint.smAndDown}">
                   Solutions for Your small business
                 </h2>
                 <p class="grey--text text-darken-2 mb-6">Don't get shirty with me owt to do with me arse down the pub have it car boot happy days no biggie bevvy only a quid I, in my flat the little rotter cheeky.!</p>
@@ -254,7 +213,7 @@
           <v-container>
             <v-row align="center">
               <v-col cols="12" sm="12" md="6">
-                <h2 class="display-2 font-weight-regular grey--text text--darken-3 mb-5">
+                <h2 class="display-2 font-weight-regular grey--text text--darken-3 mb-5" :class="{'display-1': $vuetify.breakpoint.smAndDown}">
                   Quick and easy to <br/>get started
                 </h2>
                 <p class="grey--text text-darken-2 mb-6">Don't get shirty with me owt to do with me arse down the pub have it car boot happy days no biggie bevvy only a quid I, in my flat the little rotter cheeky.!</p>
@@ -292,7 +251,7 @@
                 <img src="img/action_img.png">
               </v-col>
               <v-col cols="12" md="6">
-                <h2 class="display-2 white--text font-weight-medium mb-6">Managed wordpress Hosting on all plans</h2>
+                <h2 class="display-2 white--text font-weight-medium mb-6" :class="{'display-1': $vuetify.breakpoint.smAndDown}">Managed wordpress Hosting on all plans</h2>
                 <p class="blue--text text--lighten-4 mb-10">Spiffing pukka show off show off pick your nose and blow off easy peasy buggered hotpot Harry, pardon me blatant.!</p>
                 <v-btn color="error" x-large class="text-capitalize">Product docs</v-btn>
               </v-col>
@@ -304,7 +263,7 @@
       <section id="pricing" class="py-12 my-12">
         <v-container>
           <div class="text-center">
-            <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
+            <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6" :class="{'display-1': $vuetify.breakpoint.smAndDown}">
               Check out awesome plans,
               <br class="d-none d-md-block" />
               Built for business.
@@ -358,7 +317,7 @@
       <section id="blog" class="py-12">
         <v-container>
           <div class="text-center mb-6">
-            <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6">
+            <h2 class="display-2 font-weight-medium grey--text text--darken-3 mb-6" :class="{'display-1': $vuetify.breakpoint.smAndDown}">
               Our Latest News
             </h2>
             <p class="grey--text text--darken-1">The full monty burke posh excuse my French Richard cheeky bobby spiffing crikey<br class="d-none d-md-block"/>
@@ -407,37 +366,84 @@
       </section>
 
       <!-- Section: CTA 2 -->
-      <section id="cta-2" class="py-12">
+      <section id="cta-2" class="pt-12">
         <v-parallax
           src="img/hosting_action_bg.png"
           height="400"
         >
           <v-overlay
-          absolute
-          color="red"
-          value="true"
-          opacity=".7">
-        
-          <v-container>
-            <v-row
-            align="center"
-            >
-              <v-col cols="12" sm="8" class="white--text">
-                <h2 class="display-2 font-weight-medium mb-3">
+            absolute
+            color="red"
+            value="true"
+            opacity=".8">
+            <v-container>
+             <v-row align="center">
+                <v-col cols="12" sm="8" class="text-center text-sm-left">
+                  <h2 class="display-2 font-weight-medium mb-3" :class="{ 'display-1' : $vuetify.breakpoint.smAndDown }">
                   Start growing with SaasLand today!
-                </h2>
-                <p class="title">30-day moneyback guarantee. No questions asked.</p>
+                  </h2>
+                  <p class="title">30-day moneyback guarantee. No questions asked.</p>
+                </v-col>
+               <v-col cols="12" sm="4" class="text-center text-sm-right">
+                  <v-btn color="white" x-large depressed class="text-capitalize red--text text--lighten-1">Get a free Estimate</v-btn>
+               </v-col>
+              </v-row>
+            </v-container>
+          </v-overlay>
+        </v-parallax>
+      </section>
+
+        <v-footer padless id="footer" class="pt-12">
+          <v-container>
+            <v-row>
+              <v-col cols="12" sm="6" md="4">
+                <div>
+                  <img src="img/logo2.png">
+                </div>
+                <p class="grey--text mt-5 mb-8">
+                  © 2019 VassLand, LLC. All rights not reserved. Proudly copied by <span class="purple--text">M96</span>
+                </p>
+                <div>
+                  <v-hover v-slot:default="{ hover }" v-for="btn in socialBtn" :key="btn.icon">
+                    <v-btn large icon :color="hover ? 'red' : ''" class="mr-2">
+                      <v-icon :color="hover ? 'red' : 'grey' ">{{ btn.icon }}</v-icon>
+                    </v-btn>
+                  </v-hover>
+                </div>
               </v-col>
-              <v-col cols="12" sm="4" class="text-right">
-                <v-btn color="white" x-large depressed class="text-capitalize red--text text--lighten-1">Get a free Estimate</v-btn>
+              <v-col cols="12" sm="6" md="3">
+                <h3 class="white--text mb-5 ml-6">Download</h3>
+                <ul>
+                  <v-hover v-slot:default="{ hover }" v-for="li in ['Company', 'Android Apps', 'iOS Apps', 'Desktop', 'Blog', 'Partners', 'Careers']" :key="li.id">
+                    <li class="mb-3">
+                      <a href="#!" :class="hover ? 'red--text' : 'grey--text' ">{{ li }}</a>
+                    </li>
+                  </v-hover>
+                </ul>
+              </v-col>
+              <v-col cols="12" sm="6" md="3">
+                <h3 class="white--text mb-5 ml-6">Help</h3>
+                <ul>
+                  <v-hover v-slot:default="{ hover }" v-for="li in ['FAQ', 'Privacy', 'Term & Conditions', 'Reporting', 'Block Storage', 'Tools & Integrations', 'API', 'Pricing']" :key="li.id">
+                    <li class="mb-3">
+                      <a href="#!" :class="hover ? 'red--text' : 'grey--text' ">{{ li }}</a>
+                    </li>
+                  </v-hover>
+                </ul>
+              </v-col>
+              <v-col cols="12" sm="6" md="2">
+                <h3 class="white--text mb-5 ml-6">Help</h3>
+                <ul>
+                  <v-hover v-slot:default="{ hover }" v-for="li in ['Support', 'Sales', 'Report Abuse', 'System Status', 'Block Storage']" :key="li.id">
+                    <li class="mb-3">
+                      <a href="#!" :class="hover ? 'red--text' : 'grey--text' ">{{ li }}</a>
+                    </li>
+                  </v-hover>
+                </ul>
               </v-col>
             </v-row>
           </v-container>
-        </v-overlay>
-  </v-parallax>
-       
-      </section>
-
+        </v-footer>
       </v-content>
     </v-app>
 

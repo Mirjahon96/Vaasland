@@ -17,6 +17,11 @@ a {
   text-decoration: none;
 }
 
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
 /* Utilities */
 .responsive-img {
   max-width: 100%;
@@ -75,4 +80,9 @@ a {
 
 #cta-2 .v-overlay__content {
   width: 100%;
+}
+
+/* Footer */
+#footer {
+  background: #020230;
 }
