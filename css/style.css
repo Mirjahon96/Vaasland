@@ -86,3 +86,9 @@ li {
 #footer {
   background: #020230;
 }
+
+@media (max-width: 600px) {
+  .mobile-img {
+    width: 100%;
+  }
+}

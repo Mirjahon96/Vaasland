@@ -34,7 +34,7 @@
         <v-container pa-0>
           <v-toolbar fixed flat height="90">
             <a href="#!" class="responsive-img">
-              <img src="img/logo.png" alt="logo" />
+              <img src="img/logo.png" alt="logo" class="logo"/>
             </a>
 
             <v-spacer></v-spacer>
@@ -86,7 +86,9 @@
                 >
               </v-col>
               <v-col cols="12" sm="12" md="6">
-                <v-img src="img/hosting-image.png"></v-img>
+                <div class="responsive-img">
+                  <v-img src="img/hosting-image.png"></v-img>
+                </div>
               </v-col>
             </v-row>
           </v-container>
@@ -179,7 +181,7 @@
           <v-container>
             <v-row align="center">
               <v-col cols="12" sm="12" md="6">
-                <img src="img/business1.png">
+                <img src="img/business1.png" class="mobile-img">
               </v-col>
               <v-col cols="12" sm="12" md="6">
                 <h2 class="display-2 font-weight-regular grey--text text--darken-3 mb-5" :class="{'display-1': $vuetify.breakpoint.smAndDown}">
@@ -237,7 +239,7 @@
                 </div>
               </v-col>
               <v-col cols="12" sm="12" md="6">
-                <img src="img/business2.png">
+                <img src="img/business2.png" class="mobile-img">
               </v-col>
             </v-row>
           </v-container>
@@ -248,7 +250,7 @@
           <v-container>
             <v-row align="center">
               <v-col cols="12" md="6">
-                <img src="img/action_img.png">
+                <img src="img/action_img.png" class="mobile-img">
               </v-col>
               <v-col cols="12" md="6">
                 <h2 class="display-2 white--text font-weight-medium mb-6" :class="{'display-1': $vuetify.breakpoint.smAndDown}">Managed wordpress Hosting on all plans</h2>
